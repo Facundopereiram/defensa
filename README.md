@@ -1,22 +1,59 @@
-La defensa del proyecto consiste en un cuestionario en webasignatura y un repositorio en GitHub con problemas a resolver. Este es el repositorio en GitHub.
+Este archivo `README.md` debe estar en la raíz de la carpeta abierta en Visual Studio Code; en caso contrario deben usar el comando **File|Open Folder...** para abrir la carpeta que lo contiene.
 
-Para resolver los problemas, deben abrir en Visual Studio Code las carpetas `p1`, `p2`, etc. contenidas en este repositorio. Por ejemplo, para resolver el primer problema deben abrir la carpeta `p1` con el comando **File|Open Folder**, para resolver el segundo la carpeta `p2`, y así sucesivamente.
+En este problema deben demostrar que saben cómo implementar responsabilidades de hacer a partir de tarjetas CRC.
 
-<img src="./Assets/OpenFolder.gif" width="766" height="484"/>
+Sean las siguientes tarjetas CRC de las clases `Publication` y `PublicationItem`
 
-<br>
+<table id="card">
+    <tr>
+        <td align="center" colspan="2">
+            <p><b>Publication</b></p>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <p>Conocer la fecha final de la publicación</p>
+            <p>Conocer los ítems publicados y agregar y remover ítems a la publicación</p>
+            <p>Obtener el texto de la publicación para mostrar</p>
+        </td>
+        <td>
+            <p>PublicationItem</p>
+        </td>
+    </tr>
+</table>
 
-Cuando tengan la carpeta abierta, van a poder ejecutar desde la consola de Visual Studio Code los comandos `dotnet test` para compilar y ejecutar los casos de prueba.
+El texto de la publicación luce así:
+```bash
+Fecha: 31/3/2021
+1 de 'Caja de cartón' a $23
+4 de 'Placa de cartón' a $56
+```
 
-<img src="./Assets/DotnetRun.gif" width="766" height="484"/>
+💡 El formato preciso del texto de la publicación no es importante **en la medida que incluya para cada ítem publicado la cantidad, el nombre del material y el precio**. Noten que la cantidad y el precio son responsabilidades de conocer de la clase `PublicationItem` y el nombre del material es una responsabilidad de conocer de la clase `Material`.
 
-<br>
+<table id="card">
+    <tr>
+        <td align="center" colspan="2">
+            <p><b>PublicationItem</b></p>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <p>Conocer el material publicado</p>
+            <p>Conocer la cantidad del material</p>
+            <p>Conocer el precio del material</p>
+        </td>
+        <td>
+            <p>Material</p>
+        </td>
+    </tr>
+</table>
 
-También pueden usar `View|Command Palette...`, luego elegir `Task: Run Task` o `Task: Run Test Task`, y luego la tarea `Test` para ejecutar el caso de prueba.
+**Consigna:**
 
-<img src="./Assets/RunTestTask.gif" width="766" height="484"/>
+Dadas las tarjetas CRC y el código correspondiente en las carpetas `src` y `test`, completar el código que falta para:
 
-<br>
+1. Representar en C# las responsabilidades de esas tarjetas CRC
+2. Que pasen todos los casos de prueba provistos
 
-Cada carpeta tiene un problema diferente. Los problemas están relacionados con el código base que ya les dimos pero son independientes, es decir, no hay que resolver un problema primero para pasar al siguiente.
-
+💡 El código que falta está en la clase `Publication`.
